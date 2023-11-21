@@ -1,0 +1,58 @@
+/* Login.css */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly transparent dark background */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* Ensure it appears above other elements */
+    backdrop-filter: blur(5px); /* Apply a blur effect to the background */
+    transition: backdrop-filter 0.5s; /* Smooth transition for the blur effect */
+  }
+  
+  .login-card {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .login-card h2 {
+    margin: 0;
+    color: #404143; /* Colorful heading */
+  }
+  
+  .login-card input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .login-card button {
+    width: 100%;
+    padding: 10px;
+    background-color:#404143;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .login-card button:hover {
+    background-color: #404143;
+  }
+
+
+ 
+  
+  

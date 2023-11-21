@@ -52,7 +52,7 @@ h1 {
 }
 
 .search {
-  width: 71%;
+  width: 100%;
   margin: 4rem 0 2rem;
 
   display: flex;
@@ -104,8 +104,14 @@ h1 {
 
 
 
-
-
+/* 
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* This ensures the content is centered vertically on the screen */
+ */
 
 
 

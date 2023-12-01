@@ -14,7 +14,10 @@ import img3 from "../src/assets/img3.jpg";
 
 //44241ef1
 
-const API_URL = "http://www.omdbapi.com?apikey=44241ef1";
+// const API_URL = "http://www.omdbapi.com?apikey=44241ef1";
+const API_URL = `http://www.omdbapi.com?apikey=${process.env.REACT_APP_API_KEY}`;
+
+
 
 const movie1 = {
   Title: "Italian Spiderman",

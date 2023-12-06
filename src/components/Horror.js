@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import './Horror.css';
 
 const API_URL = 'http://www.omdbapi.com?apikey=44241ef1';
 
@@ -60,7 +61,7 @@ const Horror = ({ setHideOtherElements }) => {
         )}
       </div>
       {/* <button onClick={hideAllAndGoBack}>Go Back</button>  */}
-      <Link to="/" onClick={() => setHideOtherElements(false)}>Go Back</Link>
+      <Link to="/" className="GoBack-link" onClick={() => setHideOtherElements(false)}>Go Back</Link>
     </div>
   );
 };

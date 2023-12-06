@@ -1,0 +1,57 @@
+.GoBack-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #6c757d; /* Adjust the background color to match your design */
+    color: #ffffff; /* Adjust the text color to match your design */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .GoBack-link:hover {
+    background-color: #495057; /* Adjust the hover background color to match your design */
+    color: #ffffff; /* Set the text color to the same color as normal state */
+  }
+
+  .movie-details-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    
+  }
+  
+  .movie-details-left {
+    flex: 1;
+
+  }
+  
+  .movie-details-right {
+    flex: 1;
+    padding-left: 130px;
+    margin-top: 50px;
+    
+  }
+
+
+  .rating-section {
+    margin-top: 20px;
+  }
+  
+  .stars-container {
+    display: inline-block;
+  }
+  
+  .star {
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .grey {
+    color: grey;
+  }
+  
+  .yellow {
+    color: gold;
+  }

@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Side from "./components/Side";
 import Login from "./components/Login";
 import Horror from "./components/Horror";
+import MovieDetails from './components/MovieDetails';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import img1 from "../src/assets/img1.jpg";
 import img2 from "../src/assets/img2.jpg";
@@ -29,13 +30,15 @@ const movie1 = {
 };
 
 const App = () => {
+  const [selectedMovie, setSelectedMovie] = useState(null);
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [mode, setMode] = useState("light");
   const [hideOtherElements, setHideOtherElements] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const searchMovies = async (title) => {
-    const response = await fetch(`${API_URL}&s=${title}`);
+  const searchMovies = async (title, page = 1) => {
+    const response = await fetch(`${API_URL}&s=${title}&page=${page}`);
     const data = await response.json();
     setMovies(data.Search);
   };
@@ -43,6 +46,22 @@ const App = () => {
   useEffect(() => {
     searchMovies("Spiderman");
   }, []);
+
+  const handleMovieClick = (movie) => {
+    setSelectedMovie(movie);
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+    searchMovies(searchTerm, currentPage + 1);
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage((prevPage) => prevPage - 1);
+      searchMovies(searchTerm, currentPage - 1);
+    }
+  };
 
   return (
     <div>
@@ -154,12 +173,17 @@ const App = () => {
             </button>
           </div>
 
+         
+
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route
               path="/horror"
               element={<Horror setHideOtherElements={setHideOtherElements} />}
             />
+             <Route path="/movie/:id" element={<MovieDetails />} />
+           
+                      
           </Routes>
           {/* 
           <button onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}>
@@ -172,14 +196,26 @@ const App = () => {
                 <MovieCard movie={movie} />
               ))}
             </div>
+              
+            
           ) : (
             <div className="empty">
               <h2>No movies found</h2>
             </div>
+          
           )}
+            <div className="pagination-buttons">
+            <button  className="categories-button"  onClick={handlePrevPage} disabled={currentPage === 1}>
+              Previous
+            </button>
+            <button  className="categories-button"  onClick={handleNextPage}>Next</button>
+          </div>
         </div>
+
       </Router>
     </div>
+
+    
   );
 };
 
